@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -22,12 +23,22 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const widgetApiKey =
+    process.env.NEXT_PUBLIC_WIDGET_API_KEY ?? "org-69e5c27efa5b2d35bb5974c8";
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Script
+          src="https://chatbotv2-widget.vercel.app/widget.js"
+          data-api-key={widgetApiKey}
+          strategy="afterInteractive"
+        />
+        {children}
+      </body>
     </html>
   );
 }
