@@ -1,3 +1,5 @@
+import Footer from "@/component/layout/Footer";
+import Navbar from "@/component/layout/Navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
@@ -32,12 +34,20 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* When JS is disabled, override Framer Motion's inline opacity/transform initial states */}
+
+        {/* <noscript>
+          <style>{`*{opacity:1!important;transform:none!important;}`}</style>
+        </noscript> */}
+
         <Script
-          src="https://chatbotv2-widget.vercel.app/widget.js"
+          src="http://localhost:5173/widget.js"
           data-api-key={widgetApiKey}
           strategy="afterInteractive"
         />
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
