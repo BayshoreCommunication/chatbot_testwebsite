@@ -41,7 +41,7 @@ export default function RootLayout({
         </noscript> */}
 
         <Script
-          src="http://localhost:5173/widget.js"
+          src="https://bayai-widget.vercel.app/widget.js"
           data-api-key={widgetApiKey}
           strategy="afterInteractive"
         />
