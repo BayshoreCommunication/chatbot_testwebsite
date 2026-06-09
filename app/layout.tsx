@@ -41,7 +41,7 @@ export default function RootLayout({
         </noscript> */}
 
         <Script
-          src="https://bayai-widget.vercel.app/widget.js"
+          src="https://chatbotv2-widget.vercel.app/widget.js"
           data-api-key={widgetApiKey}
           strategy="afterInteractive"
         />
