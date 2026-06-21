@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const widgetApiKey =
-    process.env.NEXT_PUBLIC_WIDGET_API_KEY ?? "org-6a338886ab5cec97b63312bd";
+    process.env.NEXT_PUBLIC_WIDGET_API_KEY ?? "org-6a37a3d2a9368e2682c93235";
 
   return (
     <html
