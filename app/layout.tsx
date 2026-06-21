@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const widgetApiKey =
-    process.env.NEXT_PUBLIC_WIDGET_API_KEY ?? "org-69e5c27efa5b2d35bb5974c8";
+    process.env.NEXT_PUBLIC_WIDGET_API_KEY ?? "org-6a338886ab5cec97b63312bd";
 
   return (
     <html
@@ -42,6 +42,7 @@ export default function RootLayout({
 
         <Script
           src="https://chatbotv2-widget.vercel.app/widget.js"
+          // src="http://localhost:5173/widget.js"
           data-api-key={widgetApiKey}
           strategy="afterInteractive"
         />
